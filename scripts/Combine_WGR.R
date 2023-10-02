@@ -11,8 +11,8 @@ write.csv(gene_info, "gene_geno_exp.csv")
 write.csv(gene_exp, "nuclear_deseq_results_notrna.csv")
 DEGs <- subset(gene_exp, padj<0.05)
 
-#Filter genomic regions without 3x depth
-reseq <- read.delim("../Psass/psass_window_1kb.tsv")
+#Filter genomic regions without 3x depth 
+reseq <- read.delim("../Psass/psass_window_1kb.tsv") ##(File S1 in supplemental material online at MBE)
 filter_reseq <- subset(reseq, c(Abs_depth_females>=33,Abs_depth_males>=33))
 filter_reseq_nm <- filter_reseq %>% drop_na(Fst)
 rm(reseq)
@@ -46,14 +46,6 @@ highfst_exp_peaks <- highfst_express %>% subset(!is.na(highfst_express$log2FoldC
 
 distinct(highfst_exp_peaks, ID, .keep.all = TRUE)
 
-#Check for twin peaks
-ggplot()+
-  geom_density(aes(highfst_exp_peaks$log2FoldChange), size = 0.7)+
-  xlim(-10, 10)+
-  ylab("Density")+
-  xlab("Log2 Fold-Change")+
-  theme_classic()
-
 #Check DGE and high fst
 DEG_High_FST <- inner_join(DEGs, highfst_exp_peaks)
 
@@ -69,6 +61,3 @@ write(unique_female_genes, "female_biased_genes.txt")
 male_genes <- subset(kb_highfst, log2.fold_change. <= -1) 
 unique_male_genes <- c(male_genes$gene_id) %>% unique()
 write(unique_male_genes, "male_biased_genes.txt")
-
-library(ggplot2)
-
