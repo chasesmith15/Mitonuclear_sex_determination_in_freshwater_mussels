@@ -5,6 +5,10 @@ This project investigates the role of mitochondrial DNA in the sex determination
 ## Analyses 
 This repository hosts scripts for the following analyses:
 
+-   Genome-wide heterozygosity for SDR identification
+
+-   Sliding window analyses to identify genome-wide differentiation
+
 -   differential gene expression (`DESeq2`)
 
 -   weighted gene co-expression network analysis (`WGCNA`)
