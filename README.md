@@ -9,15 +9,15 @@ This repository hosts scripts for the following analyses:
 
 -   Sliding window analyses to identify genome-wide differentiation
 
--   differential gene expression (`DESeq2`)
+-   Differential gene expression (`DESeq2`)
 
--   weighted gene co-expression network analysis (`WGCNA`)
+-   Weighted gene co-expression network analysis (`WGCNA`)
 
--   gene set enrichment analysis (`GSEA`)
+-   Gene set enrichment analysis (`GSEA`)
 
--   protein-protein interaction prediction (AlphaFold & AlphaPulldown)
+-   Protein-protein interaction prediction (AlphaFold & AlphaPulldown)
 
--   mitochondrial short-non coding RNA validation
+-   Mitochondrial short-non coding RNA validation
 
 
 Analyses were performed by running `analysis_workflow.R`, and results were synthesized into the visualizations presented below. 
